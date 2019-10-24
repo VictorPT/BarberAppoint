@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "231651329113",
+    "firebase_url": "https://barber-appoint.firebaseio.com",
+    "project_id": "barber-appoint",
+    "storage_bucket": "barber-appoint.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:231651329113:android:e2ecebbdfcf6ae94141d48",
+        "android_client_info": {
+          "package_name": "com.example.barberappoint"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "231651329113-ocp53t3bnrecjtltn7f5d6jc0mt1ugkm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.barberappoint",
+            "certificate_hash": "6479dca819c65e520dcded78e8b9348c7a46ade8"
+          }
+        },
+        {
+          "client_id": "231651329113-h5que9u0l9ii1m8ehqasuovdk5qpf52p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByiDOG-ftgGnSYy1BwJDqkBlN1NeBk_ck"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "231651329113-h5que9u0l9ii1m8ehqasuovdk5qpf52p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
