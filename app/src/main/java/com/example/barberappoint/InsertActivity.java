@@ -25,8 +25,9 @@ public class InsertActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert);
-        mFirebaseDatabase = FirebaseDatabase.getInstance();
-        mDatabaseReference = mFirebaseDatabase.getReference().child("appointment");
+        FirebaseUtil.openFbReference("appointment");
+        mFirebaseDatabase = FirebaseUtil.mFirebaseDatabase;
+        mDatabaseReference = FirebaseUtil.mDatabaseReference;
 
         txtName = findViewById(R.id.txtName);
         txtService = findViewById(R.id.txtService);
