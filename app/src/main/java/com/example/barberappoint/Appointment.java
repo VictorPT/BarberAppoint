@@ -6,15 +6,19 @@ public class Appointment {
     private String service;
     private String date;
     private String hour;
+    private String price;
+    private String barber;
 
     public Appointment(){}
 
-    public Appointment(String name, String service, String date, String hour) {
+    public Appointment(String name, String service, String date, String hour, String price, String barber) {
         this.setId(id);
         this.setName(name);
         this.setService(service);
         this.setDate(date);
         this.setHour(hour);
+        this.setPrice(price);
+        this.setBarber(barber);
     }
 
     public String getName() {
@@ -55,5 +59,21 @@ public class Appointment {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
+    public String getBarber() {
+        return barber;
+    }
+
+    public void setBarber(String barber) {
+        this.barber = barber;
     }
 }

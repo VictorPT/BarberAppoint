@@ -1,9 +1,11 @@
 package com.example.barberappoint;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.firebase.database.ChildEventListener;
@@ -83,13 +85,28 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
     public class AppointmentViewHolder extends RecyclerView.ViewHolder{
         TextView tvName;
+        TextView tvBarber;
+        TextView tvService;
+        TextView tvPrice;
+        TextView tvDate;
+
+
         public AppointmentViewHolder(View itemView){
             super(itemView);
             tvName = itemView.findViewById(R.id.tvName);
+            tvBarber = itemView.findViewById(R.id.tvBarber);
+            tvService = itemView.findViewById(R.id.tvService);
+            tvPrice = itemView.findViewById(R.id.tvPrice);
+            tvDate = itemView.findViewById(R.id.tvDate);
         }
 
+        @SuppressLint("SetTextI18n")
         public void bind(Appointment appoints){
             tvName.setText(appoints.getName());
+            tvBarber.setText(appoints.getBarber());
+            tvService.setText(appoints.getService());
+            tvPrice.setText(appoints.getPrice().toString());
+            tvDate.setText(appoints.getDate()+" - "+ appoints.getHour());
         }
     }
 }

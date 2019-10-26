@@ -8,8 +8,19 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvAppointments"
-        android:layout_width="409dp"
-        android:layout_height="729dp"
+        android:layout_width="395dp"
+        android:layout_height="590dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginLeft="144dp"
+        android:layout_marginTop="20dp"
+        android:text="Agregar cita"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvAppointments" />
 </androidx.constraintlayout.widget.ConstraintLayout>

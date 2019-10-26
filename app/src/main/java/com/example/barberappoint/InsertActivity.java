@@ -2,6 +2,7 @@ package com.example.barberappoint;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,8 @@ public class InsertActivity extends AppCompatActivity implements View.OnClickLis
     EditText txtService;
     EditText txtDate;
     EditText txtHour;
+    EditText txtPrice;
+    EditText txtBarber;
     Button btnSave;
 
     @Override
@@ -33,6 +36,8 @@ public class InsertActivity extends AppCompatActivity implements View.OnClickLis
         txtService = findViewById(R.id.txtService);
         txtDate = findViewById(R.id.txtDate);
         txtHour = findViewById(R.id.txtHour);
+        txtPrice = findViewById(R.id.txtPrice);
+        txtBarber = findViewById(R.id.txtBarber);
         btnSave = findViewById(R.id.btnSave);
 
         btnSave.setOnClickListener(this);
@@ -54,7 +59,9 @@ public class InsertActivity extends AppCompatActivity implements View.OnClickLis
         String service = txtService.getText().toString();
         String date = txtDate.getText().toString();
         String hour = txtHour.getText().toString();
-        Appointment appoint = new Appointment(name, service, date, hour);
+        String price = txtPrice.getText().toString();
+        String barber = txtBarber.getText().toString();
+        Appointment appoint = new Appointment(name, service, date, hour, price, barber);
         mDatabaseReference.push().setValue(appoint);
     }
     private void clean() {
@@ -62,5 +69,7 @@ public class InsertActivity extends AppCompatActivity implements View.OnClickLis
         txtService.setText("");
         txtDate.setText("");
         txtHour.setText("");
+        txtPrice.setText("");
+        txtBarber.setText("");
     }
 }
