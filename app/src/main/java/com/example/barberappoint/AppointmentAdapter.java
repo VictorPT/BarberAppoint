@@ -105,7 +105,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
             tvName.setText(appoints.getName());
             tvBarber.setText(appoints.getBarber());
             tvService.setText(appoints.getService());
-            tvPrice.setText(appoints.getPrice().toString());
+            tvPrice.setText(appoints.getPrice());
             tvDate.setText(appoints.getDate()+" - "+ appoints.getHour());
         }
     }
