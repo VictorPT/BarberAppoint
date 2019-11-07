@@ -1,6 +1,8 @@
 package com.example.barberappoint;
 
-public class Appointment {
+import java.io.Serializable;
+
+public class Appointment implements Serializable {
     private String id;
     private String name;
     private String service;

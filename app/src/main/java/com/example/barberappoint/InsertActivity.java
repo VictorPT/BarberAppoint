@@ -23,6 +23,8 @@ public class InsertActivity extends AppCompatActivity implements View.OnClickLis
     EditText txtPrice;
     EditText txtBarber;
     Button btnSave;
+    Button btnDelete;
+    Appointment appoint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
@@ -39,8 +41,24 @@ public class InsertActivity extends AppCompatActivity implements View.OnClickLis
         txtPrice = findViewById(R.id.txtPrice);
         txtBarber = findViewById(R.id.txtBarber);
         btnSave = findViewById(R.id.btnSave);
+        btnDelete = findViewById(R.id.btnDelete);
 
         btnSave.setOnClickListener(this);
+        btnDelete.setOnClickListener(this);
+
+        Intent intent = getIntent();
+        Appointment appoint = (Appointment) intent.getSerializableExtra("Appoint");
+        if (appoint == null){
+            appoint = new Appointment();
+        }
+        this.appoint = appoint;
+
+        txtName.setText(appoint.getName());
+        txtService.setText(appoint.getService());
+        txtDate.setText(appoint.getDate());
+        txtHour.setText(appoint.getHour());
+        txtPrice.setText(appoint.getPrice());
+        txtBarber.setText(appoint.getBarber());
     }
 
     @Override
@@ -50,20 +68,44 @@ public class InsertActivity extends AppCompatActivity implements View.OnClickLis
                 saveAppointment();
                 Toast.makeText(this, "Cita guardada", Toast.LENGTH_LONG).show();
                 clean();
+                backToList();
+                break;
+            case R.id.btnDelete:
+                deleteAppointment();
+                Toast.makeText(this,"Cita borrada", Toast.LENGTH_LONG).show();
+                backToList();
                 break;
         }
     }
 
     private void saveAppointment(){
-        String name = txtName.getText().toString();
-        String service = txtService.getText().toString();
-        String date = txtDate.getText().toString();
-        String hour = txtHour.getText().toString();
-        String price = txtPrice.getText().toString();
-        String barber = txtBarber.getText().toString();
-        Appointment appoint = new Appointment(name, service, date, hour, price, barber);
-        mDatabaseReference.push().setValue(appoint);
+        appoint.setName(txtName.getText().toString());
+        appoint.setService(txtService.getText().toString());
+        appoint.setDate(txtDate.getText().toString());
+        appoint.setHour(txtHour.getText().toString());
+        appoint.setPrice(txtPrice.getText().toString());
+        appoint.setBarber(txtBarber.getText().toString());
+        if(appoint.getId() == null){
+            mDatabaseReference.push().setValue(appoint);
+        }
+        else{
+            mDatabaseReference.child(appoint.getId()).setValue(appoint);
+        }
     }
+
+    private void deleteAppointment(){
+        if(appoint == null){
+            Toast.makeText(this,"La cita no esta guardada y no se puede borrar.", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        mDatabaseReference.child(appoint.getId()).removeValue();
+    }
+
+    private void backToList(){
+        Intent intent = new Intent(this, ListActivity.class);
+        startActivity(intent);
+    }
+
     private void clean() {
         txtName.setText("");
         txtService.setText("");

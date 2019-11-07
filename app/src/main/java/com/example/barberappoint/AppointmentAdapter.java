@@ -2,6 +2,7 @@ package com.example.barberappoint;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -83,7 +84,8 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
         return appoints.size();
     }
 
-    public class AppointmentViewHolder extends RecyclerView.ViewHolder{
+    public class AppointmentViewHolder extends RecyclerView.ViewHolder
+        implements View.OnClickListener {
         TextView tvName;
         TextView tvBarber;
         TextView tvService;
@@ -98,6 +100,7 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
             tvService = itemView.findViewById(R.id.tvService);
             tvPrice = itemView.findViewById(R.id.tvPrice);
             tvDate = itemView.findViewById(R.id.tvDate);
+            itemView.setOnClickListener(this);
         }
 
         @SuppressLint("SetTextI18n")
@@ -107,6 +110,15 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
             tvService.setText(appoints.getService());
             tvPrice.setText(appoints.getPrice());
             tvDate.setText(appoints.getDate()+" - "+ appoints.getHour());
+        }
+
+        @Override
+        public void onClick(View view) {
+            int position = getAdapterPosition();
+            Appointment selectedAppoint = appoints.get(position);
+            Intent intent = new Intent(view.getContext(), InsertActivity.class);
+            intent.putExtra("Appoint", selectedAppoint);
+            view.getContext().startActivity(intent);
         }
     }
 }
