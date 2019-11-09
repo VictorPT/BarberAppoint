@@ -1,6 +1,7 @@
 package com.example.barberappoint;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -26,9 +27,8 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
     private FirebaseDatabase mFirebaseDatabase;
     private DatabaseReference mDatabaseReference;
     private ChildEventListener mChildListener;
-
     public AppointmentAdapter(){
-        FirebaseUtil.openFbReference("appointment");
+
         mFirebaseDatabase = FirebaseUtil.mFirebaseDatabase;
         mDatabaseReference = FirebaseUtil.mDatabaseReference;
         appoints = FirebaseUtil.mAppoint;
