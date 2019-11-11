@@ -34,7 +34,7 @@ public class FirebaseUtil {
 
     private FirebaseUtil() {};
 
-    public  static void openFbReference(String ref, final Activity callerActivity){
+    public static void openFbReference(String ref, final Activity callerActivity){
         if(firebaseUtil == null){
             firebaseUtil = new FirebaseUtil();
             mFirebaseDatabase = FirebaseDatabase.getInstance();
@@ -45,14 +45,16 @@ public class FirebaseUtil {
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                     if(firebaseAuth.getCurrentUser() == null){
                         FirebaseUtil.signIn();
+                        Log.d("Admin","Now? "+ FirebaseUtil.isAdmin);
                     }
                     else{
                         String userId = firebaseAuth.getUid();
                         checkAdmin(userId);
+                        Log.d("Admin","isAdmin: "+ FirebaseUtil.isAdmin);
                     }
                 }
-            };
 
+            };
         }
         mAppoint = new ArrayList<Appointment>();
         mDatabaseReference = mFirebaseDatabase.getReference().child(ref);
@@ -80,9 +82,7 @@ public class FirebaseUtil {
         ChildEventListener listener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                FirebaseUtil.isAdmin=true;
-                Intent intent = new Intent(caller, InsertActivity.class);
-                caller.startActivity(intent);
+                FirebaseUtil.isAdmin = true;
             }
 
             @Override
@@ -106,6 +106,7 @@ public class FirebaseUtil {
             }
         };
         ref.addChildEventListener(listener);
+
     }
 
     public static void attachListener(){
@@ -115,4 +116,5 @@ public class FirebaseUtil {
     public static void detachListener(){
         mFirebaseAuth.removeAuthStateListener(mAuthListener);
     }
+
 }
