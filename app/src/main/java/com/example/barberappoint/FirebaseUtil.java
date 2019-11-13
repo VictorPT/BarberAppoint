@@ -45,12 +45,10 @@ public class FirebaseUtil {
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                     if(firebaseAuth.getCurrentUser() == null){
                         FirebaseUtil.signIn();
-                        Log.d("Admin","Now? "+ FirebaseUtil.isAdmin);
                     }
                     else{
                         String userId = firebaseAuth.getUid();
                         checkAdmin(userId);
-                        Log.d("Admin","isAdmin: "+ FirebaseUtil.isAdmin);
                     }
                 }
 
