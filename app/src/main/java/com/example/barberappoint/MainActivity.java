@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.content.res.Resources;
@@ -11,11 +12,21 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TabHost;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.android.material.navigation.NavigationView;
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
+import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mToggle;
+    ViewPager viewPager;
+    SpringDotsIndicator springDotsIndicator;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +58,15 @@ public class MainActivity extends AppCompatActivity {
 
         tabs.setCurrentTab(0);
 
-        FirebaseUtil.openFbReference("appointment", this);
-        Log.d("Admin", "Main Activity -"+ FirebaseUtil.isAdmin);
-        if(FirebaseUtil.isAdmin){
-            Intent intent = new Intent(this, ListActivity.class);
-            startActivity(intent);
-        }
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_menu);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        springDotsIndicator = (SpringDotsIndicator) findViewById(R.id.spring_dots_indicator);
+        viewPager = (ViewPager) findViewById(R.id.viewPager);
+        ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
+        viewPager.setAdapter(viewPagerAdapter);
+        springDotsIndicator.setViewPager(viewPager);
+
     }
 
     @Override
@@ -75,5 +89,29 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         FirebaseUtil.openFbReference("appointment",this);
         FirebaseUtil.attachListener();
+    }
+
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+
+        switch (menuItem.getItemId()){
+            case R.id.nav_account:
+                return true;
+            case R.id.nav_settings:
+                return true;
+            case R.id.nav_logout:
+                Toast.makeText(this,"Logout Clicked",Toast.LENGTH_LONG).show();
+                AuthUI.getInstance()
+                        .signOut(this)
+                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                            public void onComplete(@NonNull Task<Void> task) {
+                                FirebaseUtil.attachListener();
+                            }
+                        });
+                FirebaseUtil.detachListener();
+                return true;
+        }
+
+        return false;
     }
 }
