@@ -117,7 +117,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     service = service + "- " + cerquillo.getText().toString();
                 }
                 appoint.setService(service);
-                //Intent intent = new Intent(this, );
+                Intent intent = new Intent(view.getContext(), SelectBarber.class);
+                startActivity(intent);
             }
         });
     }
