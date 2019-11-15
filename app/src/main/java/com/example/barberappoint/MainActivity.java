@@ -19,6 +19,7 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.data.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -183,7 +184,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         switch (menuItem.getItemId()){
             case R.id.nav_account:
                 return true;
-            case R.id.nav_settings:
+            case R.id.nav_bookings:
+                Intent intent = new Intent(this, UserAppointments.class);
+                startActivity(intent);
                 return true;
             case R.id.nav_logout:
                 Toast.makeText(this,"Logout Clicked",Toast.LENGTH_LONG).show();

@@ -10,11 +10,13 @@ import androidx.annotation.Nullable;
 
 import com.firebase.ui.auth.AuthUI;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 
 import java.util.ArrayList;
@@ -106,6 +108,24 @@ public class FirebaseUtil {
         ref.addChildEventListener(listener);
 
     }
+
+    public static void userAppoints(){
+
+        FirebaseUser user = mFirebaseAuth.getCurrentUser();
+        String userKey = user.getUid();
+
+        mDatabaseReference.child("appointment").child(userKey).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String userID = dataSnapshot.getValue(String.class);
+                Log.d("Data", "Data: " + userID);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}
+        });
+    }
+
 
     public static void attachListener(){
         mFirebaseAuth.addAuthStateListener(mAuthListener);

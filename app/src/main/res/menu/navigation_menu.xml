@@ -2,13 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/nav_menu">
 
-    <item android:id="@+id/nav_account"
-        android:title="Mi Cuenta"/>
+    <item
+        android:id="@+id/nav_account"
+        android:icon="@drawable/baseline_perm_identity_black_18dp"
+        android:title="Mi Cuenta" />
 
-    <item android:id="@+id/nav_settings"
-        android:title="Opciones"/>
+    <item
+        android:id="@+id/nav_bookings"
+        android:icon="@drawable/baseline_book_black_18dp"
+        android:title="Mis Reservas" />
 
-    <item android:id="@+id/nav_logout"
-        android:title="Log Out"/>
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/baseline_exit_to_app_black_18dp"
+        android:title="Log Out" />
 
 </menu>

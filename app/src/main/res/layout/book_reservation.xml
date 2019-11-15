@@ -47,18 +47,19 @@
 
                             <RadioGroup
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent">
+                                android:layout_height="wrap_content"
+                                android:padding="20dp">
 
                                 <RadioButton
                                     android:id="@+id/radioBarber1"
                                     android:layout_width="match_parent"
-                                    android:layout_height="62dp"
+                                    android:layout_height="60dp"
                                     android:text="Ana Llano" />
 
                                 <RadioButton
                                     android:id="@+id/radioBarber2"
                                     android:layout_width="match_parent"
-                                    android:layout_height="56dp"
+                                    android:layout_height="60dp"
                                     android:text="Victor Peña" />
 
                                 <RadioButton
@@ -70,9 +71,25 @@
                                 <RadioButton
                                     android:id="@+id/radioBarber4"
                                     android:layout_width="match_parent"
-                                    android:layout_height="70dp"
+                                    android:layout_height="60dp"
                                     android:text="El pancho" />
                             </RadioGroup>
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:orientation="horizontal"
+                                android:gravity="bottom">
+
+                                <Button
+                                    android:id="@+id/nextBarber"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@color/fui_bgGitHub"
+                                    android:text="Elegir dia y hora"
+                                    android:textColor="#FFFFFF"/>
+                            </LinearLayout>
                         </LinearLayout>
 
                         <LinearLayout
@@ -80,16 +97,29 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
-                            <DatePicker
-                                android:id="@+id/simpleDatePicker"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:datePickerMode="calendar"/>
-                            <TimePicker
-                                android:id="@+id/timePicker1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:timePickerMode="spinner"/>
+
+                            <include layout="@layout/date_time"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/nextDateTime"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@color/fui_bgGitHub"
+                                    android:text="Continuar"
+                                    android:textColor="#FFFFFF" />
+                            </LinearLayout>
+
+
                         </LinearLayout>
 
                         <LinearLayout
