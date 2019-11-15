@@ -11,6 +11,10 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <include layout="@layout/navigation_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -56,63 +60,60 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <LinearLayout
-                            android:id="@+id/tab1"
+
+                        <ScrollView
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical"
-                            android:padding="20dp">
+                            android:layout_height="match_parent">
 
-                            <CheckBox
-                                android:id="@+id/check_fullCut"
+                            <LinearLayout
+                                android:id="@+id/tab1"
                                 android:layout_width="match_parent"
-                                android:layout_height="45dp"
-                                android:text="Corte Completo"
-                                android:textSize="18sp" />
+                                android:layout_height="match_parent"
+                                android:orientation="vertical"
+                                android:padding="20dp">
 
-                            <CheckBox
-                                android:id="@+id/check_textured"
-                                android:layout_width="match_parent"
-                                android:layout_height="56dp"
-                                android:text="Texturizado"
-                                android:textSize="18sp" />
+                                <CheckBox
+                                    android:id="@+id/check_fullCut"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="45dp"
+                                    android:text="Corte Completo"
+                                    android:textSize="18sp"
+                                    android:onClick="onCheckboxClicked"/>
 
-                            <CheckBox
-                                android:id="@+id/check_manicure"
-                                android:layout_width="match_parent"
-                                android:layout_height="53dp"
-                                android:text="Manicura"
-                                android:textSize="18sp" />
+                                <CheckBox
+                                    android:id="@+id/check_manicure"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="53dp"
+                                    android:text="Manicura"
+                                    android:textSize="18sp"
+                                    android:onClick="onCheckboxClicked"/>
 
-                            <CheckBox
-                                android:id="@+id/check_tinted"
-                                android:layout_width="match_parent"
-                                android:layout_height="54dp"
-                                android:text="Tintado"
-                                android:textSize="18sp" />
+                                <CheckBox
+                                    android:id="@+id/check_tinted"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="54dp"
+                                    android:text="Tintado"
+                                    android:textSize="18sp"
+                                    android:onClick="onCheckboxClicked"/>
 
-                            <CheckBox
-                                android:id="@+id/check_bangs"
-                                android:layout_width="match_parent"
-                                android:layout_height="58dp"
-                                android:text="Cerquillo"
-                                android:textSize="18sp" />
+                                <CheckBox
+                                    android:id="@+id/check_bangs"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="58dp"
+                                    android:text="Cerquillo"
+                                    android:textSize="18sp"
+                                    android:onClick="onCheckboxClicked"/>
 
-                            <CheckBox
-                                android:id="@+id/check_beard"
-                                android:layout_width="match_parent"
-                                android:layout_height="49dp"
-                                android:text="Barba"
-                                android:textSize="18sp" />
+                                <CheckBox
+                                    android:id="@+id/check_beard"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="49dp"
+                                    android:text="Barba"
+                                    android:textSize="18sp"
+                                    android:onClick="onCheckboxClicked"/>
 
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
-
-
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-
-                        </LinearLayout>
+                            </LinearLayout>
+                        </ScrollView>
 
                         <LinearLayout
                             android:id="@+id/tab2"
@@ -139,7 +140,6 @@
             </TabHost>
         </LinearLayout>
 
-
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -151,5 +151,23 @@
         android:id="@+id/nav_menu">
 
     </com.google.android.material.navigation.NavigationView>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="bottom">
+
+        <Button
+            android:id="@+id/btnReserva"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/fui_bgGitHub"
+            android:text="Reservar"
+            android:textColor="#FFFFFF"
+            android:visibility="invisible"/>
+    </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
