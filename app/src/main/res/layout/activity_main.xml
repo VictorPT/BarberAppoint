@@ -68,49 +68,55 @@
                             <LinearLayout
                                 android:id="@+id/tab1"
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:orientation="vertical"
-                                android:padding="20dp">
+                                android:paddingLeft="20dp"
+                                android:paddingTop="10dp">
 
                                 <CheckBox
                                     android:id="@+id/check_fullCut"
                                     android:layout_width="match_parent"
-                                    android:layout_height="45dp"
-                                    android:text="Corte Completo"
-                                    android:textSize="18sp"
+                                    android:layout_height="50dp"
+                                    android:text="@string/corte_completo"
+                                    android:textSize="16sp"
                                     android:onClick="onCheckboxClicked"/>
 
                                 <CheckBox
                                     android:id="@+id/check_manicure"
                                     android:layout_width="match_parent"
-                                    android:layout_height="53dp"
-                                    android:text="Manicura"
-                                    android:textSize="18sp"
+                                    android:layout_height="50dp"
+                                    android:text="@string/manicura"
+                                    android:textSize="16sp"
                                     android:onClick="onCheckboxClicked"/>
 
                                 <CheckBox
                                     android:id="@+id/check_tinted"
                                     android:layout_width="match_parent"
-                                    android:layout_height="54dp"
-                                    android:text="Tintado"
-                                    android:textSize="18sp"
+                                    android:layout_height="50dp"
+                                    android:text="@string/tintado"
+                                    android:textSize="16sp"
                                     android:onClick="onCheckboxClicked"/>
 
                                 <CheckBox
                                     android:id="@+id/check_bangs"
                                     android:layout_width="match_parent"
-                                    android:layout_height="58dp"
-                                    android:text="Cerquillo"
-                                    android:textSize="18sp"
+                                    android:layout_height="50dp"
+                                    android:text="@string/cerquillo"
+                                    android:textSize="16sp"
                                     android:onClick="onCheckboxClicked"/>
 
                                 <CheckBox
                                     android:id="@+id/check_beard"
                                     android:layout_width="match_parent"
-                                    android:layout_height="49dp"
-                                    android:text="Barba"
-                                    android:textSize="18sp"
+                                    android:layout_height="50dp"
+                                    android:text="@string/barba"
+                                    android:textSize="16sp"
                                     android:onClick="onCheckboxClicked"/>
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="50dp"
+                                    android:text=""/>
 
                             </LinearLayout>
                         </ScrollView>
@@ -121,17 +127,9 @@
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:id="@+id/textView"
+                            <include layout="@layout/description_view"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Contacto: " />
-
-                            <TextView
-                                android:id="@+id/textView2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Contenido Tab 2" />
+                                android:layout_height="wrap_content"/>
 
                         </LinearLayout>
 

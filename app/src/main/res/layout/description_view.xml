@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/quienesSomos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="¿Quienes Somos?\n\nBarber Appointment es una peluquería y barbería masculina situada en Santo Domingo, Republica Dominicana. Ofrece servicios tradicionales y una atención personalizada y de confianza, ideal para aquellos que quieran un corte de cabello o un retoque de la barba.\n" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Contacto\n809-555-4444\n" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Horario Laborable\nLunes a Viernes - 10:00 AM a 8:00 PM \nSabado y Domingo - 12:00 PM a 5:00PM" />
+
+</LinearLayout>

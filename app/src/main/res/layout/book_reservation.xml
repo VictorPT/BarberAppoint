@@ -65,13 +65,13 @@
                                     android:id="@+id/radioBarber3"
                                     android:layout_width="match_parent"
                                     android:layout_height="58dp"
-                                    android:text="El menol " />
+                                    android:text="El menol" />
 
                                 <RadioButton
                                     android:id="@+id/radioBarber4"
                                     android:layout_width="match_parent"
                                     android:layout_height="70dp"
-                                    android:text="El pancho " />
+                                    android:text="El pancho" />
                             </RadioGroup>
                         </LinearLayout>
 

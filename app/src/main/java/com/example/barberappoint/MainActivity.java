@@ -10,12 +10,10 @@ import androidx.viewpager.widget.ViewPager;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.TabHost;
 import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
@@ -117,7 +115,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     service = service + "- " + cerquillo.getText().toString();
                 }
                 appoint.setService(service);
-                Intent intent = new Intent(view.getContext(), SelectBarber.class);
+                Intent intent = new Intent(view.getContext(), BookReservation.class);
                 startActivity(intent);
             }
         });
@@ -202,10 +200,4 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return false;
     }
-
-
-
-
-
-
 }

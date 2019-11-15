@@ -1,27 +1,16 @@
 package com.example.barberappoint;
 
-import android.app.Activity;
-import android.app.DatePickerDialog;
-import android.app.Dialog;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TabHost;
 import java.util.Calendar;
-import java.util.Date;
-
-import androidx.annotation.NonNull;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
 
 
-public class SelectBarber extends AppCompatActivity {
+public class BookReservation extends AppCompatActivity {
 
     private TabHost tabs;
     private ImageButton btn1, btn2;
@@ -41,7 +30,7 @@ public class SelectBarber extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_selectbarber);
+        setContentView(R.layout.book_reservation);
 
         mToolbar = (Toolbar) findViewById(R.id.nav_action);
         setSupportActionBar(mToolbar);

@@ -18,7 +18,7 @@
         </activity>
         <activity android:name=".ListActivity"></activity>
         <activity android:name=".InsertActivity" />
-        <activity android:name=".SelectBarber" />
+        <activity android:name=".BookReservation" />
     </application>
 
 </manifest>

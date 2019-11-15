@@ -2,5 +2,10 @@
     <string name="app_name">BarberAppoint</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="corte_completo"> Corte Completo - RD$500</string>
+    <string name="manicura">Manicura - RD$100</string>
+    <string name="tintado">Tintado - RD$400</string>
+    <string name="cerquillo">Cerquillo - RD$150</string>
+    <string name="barba">Barba - RD$200</string>
 
 </resources>
