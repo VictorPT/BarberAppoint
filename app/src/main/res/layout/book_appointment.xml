@@ -49,7 +49,8 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:padding="20dp"
-                                android:checkedButton="@+id/radioBarberDefault">
+                                android:checkedButton="@+id/radioBarberDefault"
+                                android:id="@+id/rgBarbers">
 
                                 <RadioButton
                                     android:id="@+id/radioBarberDefault"
@@ -124,7 +125,8 @@
                                     android:layout_weight="1"
                                     android:background="@color/fui_bgGitHub"
                                     android:text="Continuar"
-                                    android:textColor="#FFFFFF" />
+                                    android:textColor="#FFFFFF"
+                                    android:onClick="onButtonContinueClicked"/>
                             </LinearLayout>
 
 
@@ -135,6 +137,28 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
+
+                            <include layout="@layout/appointment_confirm"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="0dp"
+                                android:layout_weight="1"
+                                android:gravity="bottom"
+                                android:orientation="horizontal">
+
+                                <Button
+                                    android:id="@+id/btnConfirm"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:background="@color/fui_bgGitHub"
+                                    android:text="Confirmar"
+                                    android:textColor="#FFFFFF"
+                                    android:onClick="onButtonConfirmClicked"/>
+                            </LinearLayout>
 
 
                         </LinearLayout>

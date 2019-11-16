@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:padding="20dp">
 
-
     <devs.mulham.horizontalcalendar.HorizontalCalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
@@ -17,57 +16,54 @@
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="20dp">
+        android:paddingTop="20dp"
+        android:id="@+id/radioGroup"
+        android:checkedButton="@+id/AM10">
 
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="10:00 AM"
-            android:height="90dp"/>
+            android:id="@+id/AM10"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="11:00 AM"
-            android:height="50dp"/>
+            android:id="@+id/AM11"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="12:00 PM"
-            android:height="50dp"/>
+            android:id="@+id/PM12"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="01:00 PM"
-            android:height="50dp"/>
+            android:id="@+id/PM1"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="02:00 PM"
-            android:height="50dp"/>
+            android:id="@+id/PM2"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="03:00 PM"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="04:00 PM"
-            android:height="50dp"/>
+            android:id="@+id/PM3"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
+            android:layout_height="40dp"
             android:text="05:00 PM"
-            android:height="50dp"/>
-
+            android:id="@+id/PM4"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="06:00 PM" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:text="07:00 PM" />
+            android:layout_height="40dp"
+            android:text="06:00 PM"
+            android:id="@+id/PM5" />
     </RadioGroup>
 
 </LinearLayout>
