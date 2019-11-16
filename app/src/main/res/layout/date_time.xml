@@ -1,63 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp">
 
-    <CalendarView
+
+    <devs.mulham.horizontalcalendar.HorizontalCalendarView
         android:id="@+id/calendarView"
         android:layout_width="match_parent"
-        android:layout_height="176dp"
-        android:accessibilityHeading="false" />
+        android:layout_height="wrap_content"
+        android:background="@color/fui_bgGitHub"
+        app:textColorSelected="#FFFF"/>
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingTop="20dp">
 
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="10:00 AM"
-            android:height="50dp"/>
+            android:height="90dp"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="11:00 AM"
             android:height="50dp"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="12:00 PM"
             android:height="50dp"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="01:00 PM"
             android:height="50dp"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="02:00 PM"
             android:height="50dp"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="03:00 PM"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="04:00 PM"
             android:height="50dp"/>
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:text="05:00 PM"
             android:height="50dp"/>
+
         <RadioButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="06:00 PM"
-            android:height="50dp"/>
+            android:layout_height="50dp"
+            android:text="06:00 PM" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="07:00 PM" />
     </RadioGroup>
 
 </LinearLayout>

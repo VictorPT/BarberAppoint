@@ -186,7 +186,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
                 return true;
             case R.id.nav_logout:
-                Toast.makeText(this,"Logout Clicked",Toast.LENGTH_LONG).show();
                 AuthUI.getInstance()
                         .signOut(this)
                         .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -194,6 +193,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 FirebaseUtil.attachListener();
                             }
                         });
+                finish();
                 FirebaseUtil.detachListener();
                 return true;
         }
@@ -201,6 +201,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         return false;
     }
 
-    
+
 }
 

@@ -1,6 +1,8 @@
 package com.example.barberappoint;
 
 import android.os.Bundle;
+import android.text.format.DateFormat;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -9,6 +11,9 @@ import java.util.Calendar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+
+import devs.mulham.horizontalcalendar.HorizontalCalendar;
+import devs.mulham.horizontalcalendar.utils.HorizontalCalendarListener;
 
 
 public class BookAppointment extends AppCompatActivity {
@@ -27,6 +32,7 @@ public class BookAppointment extends AppCompatActivity {
      int anio = c.get(Calendar.YEAR);
     EditText etFecha;
     Toolbar mToolbar;
+    static String datePicked;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +70,28 @@ public class BookAppointment extends AppCompatActivity {
             tabs.setCurrentTab(1);
         }
 
+        /* starts before 1 month from now */
+        Calendar startDate = Calendar.getInstance();
+        startDate.add(Calendar.MONTH, -1);
+
+        /* ends after 1 month from now */
+        Calendar endDate = Calendar.getInstance();
+        endDate.add(Calendar.MONTH, 1);
+
+        final HorizontalCalendar horizontalCalendar = new HorizontalCalendar.Builder(this, R.id.calendarView)
+                .range(startDate, endDate)
+                .datesNumberOnScreen(5)
+                .build();
+
+        horizontalCalendar.setCalendarListener(new HorizontalCalendarListener() {
+            @Override
+            public void onDateSelected(Calendar date, int position) {
+                String selectedDateStr = DateFormat.format("EEE, MMM d, yyyy", date).toString();
+                Log.d("test", "Date: "+ selectedDateStr);
+            }
+        });
     }
   }
+
 
 

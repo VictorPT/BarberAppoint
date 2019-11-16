@@ -72,6 +72,7 @@ public class FirebaseUtil {
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
                         .setLogo(R.drawable.logo_negro)
+                        .setTheme(R.style.AppTheme)
                         .build(),
                 1);
     }
