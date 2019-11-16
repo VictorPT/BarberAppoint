@@ -193,7 +193,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                                 FirebaseUtil.attachListener();
                             }
                         });
-                finish();
                 FirebaseUtil.detachListener();
                 return true;
         }

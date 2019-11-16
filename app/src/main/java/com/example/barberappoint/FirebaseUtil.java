@@ -71,8 +71,9 @@ public class FirebaseUtil {
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
-                        .setLogo(R.drawable.logo_negro)
+                        .setIsSmartLockEnabled(false)
                         .setTheme(R.style.AppTheme)
+                        .setLogo(R.drawable.logo_negro)
                         .build(),
                 1);
     }
