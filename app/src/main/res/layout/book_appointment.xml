@@ -48,7 +48,14 @@
                             <RadioGroup
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:padding="20dp">
+                                android:padding="20dp"
+                                android:checkedButton="@+id/radioBarberDefault">
+
+                                <RadioButton
+                                    android:id="@+id/radioBarberDefault"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="60dp"
+                                    android:text="Cualquiera que esté disponible"/>
 
                                 <RadioButton
                                     android:id="@+id/radioBarber1"
@@ -66,13 +73,13 @@
                                     android:id="@+id/radioBarber3"
                                     android:layout_width="match_parent"
                                     android:layout_height="58dp"
-                                    android:text="El menol" />
+                                    android:text="Pedro Alvarez" />
 
                                 <RadioButton
                                     android:id="@+id/radioBarber4"
                                     android:layout_width="match_parent"
                                     android:layout_height="60dp"
-                                    android:text="El pancho" />
+                                    android:text="Ramon Luciano" />
                             </RadioGroup>
                             <LinearLayout
                                 android:layout_width="fill_parent"
@@ -88,7 +95,8 @@
                                     android:layout_weight="1"
                                     android:background="@color/fui_bgGitHub"
                                     android:text="Elegir dia y hora"
-                                    android:textColor="#FFFFFF"/>
+                                    android:textColor="#FFFFFF"
+                                    android:onClick="onButtonDateTimeClicked"/>
                             </LinearLayout>
                         </LinearLayout>
 

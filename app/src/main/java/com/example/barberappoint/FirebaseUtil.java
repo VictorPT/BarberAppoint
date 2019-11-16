@@ -45,13 +45,13 @@ public class FirebaseUtil {
             mAuthListener = new FirebaseAuth.AuthStateListener() {
                 @Override
                 public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                    /*if(firebaseAuth.getCurrentUser() == null){
+                    if(firebaseAuth.getCurrentUser() == null){
                         FirebaseUtil.signIn();
                     }
                     else{
                         String userId = firebaseAuth.getUid();
                         checkAdmin(userId);
-                    }*/
+                    }
                 }
 
             };

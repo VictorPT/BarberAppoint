@@ -1,6 +1,7 @@
 package com.example.barberappoint;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TabHost;
@@ -10,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 
-public class BookReservation extends AppCompatActivity {
+public class BookAppointment extends AppCompatActivity {
 
     private TabHost tabs;
     private ImageButton btn1, btn2;
@@ -30,7 +31,7 @@ public class BookReservation extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.book_reservation);
+        setContentView(R.layout.book_appointment);
 
         mToolbar = (Toolbar) findViewById(R.id.nav_action);
         setSupportActionBar(mToolbar);
@@ -52,10 +53,16 @@ public class BookReservation extends AppCompatActivity {
 
         spec = tabs.newTabSpec("mitab3");
         spec.setContent(R.id.tab3);
-        spec.setIndicator("Confirmacion");
+        spec.setIndicator("Confirmar");
         tabs.addTab(spec);
 
         tabs.setCurrentTab(0);
+    }
+
+    public void onButtonDateTimeClicked(View view){
+        if(view.getId() == R.id.nextBarber){
+            tabs.setCurrentTab(1);
+        }
 
     }
   }

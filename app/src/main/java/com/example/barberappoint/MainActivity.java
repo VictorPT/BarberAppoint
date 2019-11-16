@@ -19,7 +19,6 @@ import android.widget.Toast;
 import androidx.appcompat.widget.Toolbar;
 
 import com.firebase.ui.auth.AuthUI;
-import com.firebase.ui.auth.data.model.User;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
@@ -60,6 +59,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        navigationView = (NavigationView)findViewById(R.id.nav_menu);
+        navigationView.setNavigationItemSelectedListener(this);
+
         Resources res = getResources();
 
         tabs = (TabHost)findViewById(android.R.id.tabhost);
@@ -77,9 +79,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         tabs.setCurrentTab(0);
 
-        navigationView = (NavigationView)findViewById(R.id.nav_menu);
-        navigationView.setNavigationItemSelectedListener(this);
-
         springDotsIndicator = (SpringDotsIndicator) findViewById(R.id.spring_dots_indicator);
         viewPager = (ViewPager) findViewById(R.id.viewPager);
         ViewPagerAdapter viewPagerAdapter = new ViewPagerAdapter(this);
@@ -92,8 +91,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         barba = findViewById(R.id.check_beard);
         cerquillo = findViewById(R.id.check_bangs);
         btnReserva = findViewById(R.id.btnReserva);
-
-        final Appointment appoint = new Appointment();
 
         btnReserva.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,8 +112,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 if(cerquillo.isChecked()){
                     service = service + "- " + cerquillo.getText().toString();
                 }
-                appoint.setService(service);
-                Intent intent = new Intent(view.getContext(), BookReservation.class);
+                Intent intent = new Intent(view.getContext(), BookAppointment.class);
+                intent.putExtra("service", service);
                 startActivity(intent);
             }
         });
@@ -128,7 +125,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             if(count > 1)
                 btnReserva.setVisibility(View.VISIBLE);
         }
-        else if(!checked){
+        else{
             count--;
             if(count == 1)
                 btnReserva.setVisibility(View.INVISIBLE);
@@ -203,4 +200,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         return false;
     }
+
+    
 }
+
